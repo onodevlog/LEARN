@@ -34,3 +34,24 @@ for number in range(1,101):
         print("Buzz")
     else:
         print(number)
+
+
+#問題3-1
+class Item:
+    def __init__(self, id, name, price, purchase_price):
+        self.id = id
+        self.name = name
+        self.price = price
+        self.purchase_price = purchase_price
+    
+    def cost_rate(self):
+        rate = self.purchase_price / self.price
+        return rate
+
+item_1 = Item("A001", "半袖クールTシャツ", 5000, 2250)
+rate_1 = item_1.cost_rate()
+print(rate_1)
+
+item_2 = Item("A001", "半袖クールTシャツ", 6000, 2250)
+rate_2 = item_2.cost_rate()
+print(rate_2)

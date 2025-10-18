@@ -275,3 +275,86 @@ for n in numbers:
     if n %2 == 0:
         continue
     print(f"{n}: 後処理")
+
+
+def print_hello():
+    print("こんにちは")
+
+print_hello()
+
+
+#位置引数での記述
+def add_sub_numbers(a, b):
+    c = a + b
+    d = a-b
+    return c, d
+
+added, subed = add_sub_numbers(10, 100)
+
+#キーワード引数での記述
+def add_numbers(a, b):
+    c = a + b
+    return c
+
+added = add_numbers(b=10, a=100)
+
+
+def is_leap_yeas(year):
+    if year % 400 == 0:
+        return True
+    elif year % 100 == 0:
+        return False
+    elif year % 4 == 0:
+        return True
+    else:
+        return False
+    
+year = 2025
+result = is_leap_yeas(year)
+print(result)
+
+
+class User:
+    def __init__(self, name, mail_address, point):
+        self.name = name
+        self.mail_addess = mail_address
+        self.point = point
+
+    def add_point(self, point):
+        self.point = self.point + point
+
+user_1 = User("佐藤葵", "sato@example.com", 500)
+user_1.add_point(100)
+print(user_1.point)
+
+user_2 = User("小林ゆい", "kobayashi@exampke.com", 1000)
+user_2.add_point(100)
+print(user_2.point)
+
+
+from my_module import print_module, add_numbers
+
+print("script 開始")
+print_module()
+print(add_numbers(1,2))
+print("script 終了")
+
+from my_packeges.my_module import print_module as pm
+
+print("script 開始")
+pm()
+print("script 終了")
+
+#標準モジュールの使用
+from datetime import datetime
+
+t = datetime.today()
+print(t)
+
+
+import matplotlib.pyplot as plt
+
+label = ["A", "B", "C", "D"]
+num = [20, 17, 25, 9]
+plt.bar(label, num)
+plt.savefig('./bar.png')
